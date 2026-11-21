@@ -1,0 +1,11 @@
+schema_version: "1.0"
+name: Explicit HALT demonstration
+cartridges:
+  - id: blocked
+    model: general
+    prompt: >-
+      This task is intentionally blocked. End your final response with
+      {"status":"HALT","reason":"Demonstration requires operator review"}.
+  - id: downstream
+    model: general
+    prompt: The complete text deliverable is DOWNSTREAM. Put it in the result note.

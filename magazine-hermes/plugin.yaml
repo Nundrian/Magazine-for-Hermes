@@ -1,0 +1,6 @@
+name: magazine
+version: 0.1.0-hermes.rc2
+description: Deterministic cartridge execution and verified handovers for Hermes
+author: Adrian Davies
+provides_tools: []
+requires_hermes: "==0.23.3"

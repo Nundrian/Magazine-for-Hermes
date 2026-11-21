@@ -1,0 +1,28 @@
+schema_version: "1.0"
+name: Hermes two-file handover
+handover_mode: result_file_v1
+cartridges:
+  - id: first
+    model: general
+    prompt: >-
+      Use write_file to create hello.txt in the designated outputs directory.
+      Its exact contents must be HELLO MAGAZINE followed by one real line feed
+      character U+000A (decimal 10): 15 bytes, never literal backslash-n text.
+      Read it back using read_file and report the observed result.
+    artifacts:
+      outputs: [hello.txt]
+    retry_safe: true
+  - id: second
+    model: general
+    prompt: >-
+      Read the verified hello.txt input from first. Use write_file to create
+      verified.txt in this cartridge's outputs directory, containing exactly
+      HELLO MAGAZINE VERIFIED followed by one real line feed U+000A (decimal 10):
+      24 bytes, never literal backslash-n text. Read it back and report
+      the observed result.
+    artifacts:
+      inputs:
+        - from: first
+          path: hello.txt
+      outputs: [verified.txt]
+    retry_safe: true

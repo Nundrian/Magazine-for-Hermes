@@ -1,0 +1,1284 @@
+{
+  "date": "2026-11-21",
+  "evidence_kind": "Actual isolated Hermes + installed local Ollama models",
+  "usage_limits": "Native cumulative reported counts; absent cache/per-call coverage remains unavailable/incomplete. No estimates.",
+  "runs": [
+    {
+      "scenario": "A",
+      "run_id": "e5898b9d4d22",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "first",
+          "number": 1,
+          "session_id": "magazine-da48c2b6892a49fb90f09c433e66941e",
+          "model": "custom/hf.co/AtomicChat/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T09:32:42+00:00",
+          "finished": "2026-11-21T09:32:56+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 3,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 8645,
+            "output": 575,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 9220,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "read_file",
+            "write_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "second",
+          "number": 1,
+          "session_id": "magazine-81fee6f87f9a44f99fbba663c27c4dfa",
+          "model": "custom/hf.co/AtomicChat/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+          "provider": "custom",
+          "status": "failed",
+          "code": "DONE_MISSING",
+          "started": "2026-11-21T09:32:56+00:00",
+          "finished": "2026-11-21T09:33:21+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 5,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 16173,
+            "output": 1397,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 17570,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "patch",
+            "read_file",
+            "write_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "second",
+          "number": 2,
+          "session_id": "magazine-35001b7fab4e4748a4c872d56652fd66",
+          "model": "custom/hf.co/AtomicChat/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+          "provider": "custom",
+          "status": "failed",
+          "code": "DONE_MISSING",
+          "started": "2026-11-21T09:33:21+00:00",
+          "finished": "2026-11-21T09:34:01+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 10,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 40345,
+            "output": 2316,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 42661,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "second",
+          "number": 3,
+          "session_id": "magazine-83506f83270e44438661880347f50832",
+          "model": "custom/hf.co/AtomicChat/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T09:34:01+00:00",
+          "finished": "2026-11-21T09:34:41+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 10,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 42508,
+            "output": 2126,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 44634,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "patch",
+            "read_file",
+            "write_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "E manual recovery retains verified predecessor",
+      "run_id": "482684a0767b",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "predecessor",
+          "number": 1,
+          "session_id": "magazine-63df81c14da94e87b1be3bea20f17d03",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:00:22+00:00",
+          "finished": "2026-11-21T05:00:37+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 2586,
+            "output": 622,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 3208,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "recover",
+          "number": 1,
+          "session_id": "magazine-7175dbd1e71f47e5913cb021cb0c9491",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "halted",
+          "code": "HALT_RECEIVED",
+          "started": "2026-11-21T05:00:37+00:00",
+          "finished": "2026-11-21T05:00:45+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 2,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 5595,
+            "output": 180,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 5775,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "read_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "recover",
+          "number": 2,
+          "session_id": "magazine-6e1520445b3b4f2f9e577c5507a82efa",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:00:52+00:00",
+          "finished": "2026-11-21T05:01:05+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 4,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 11917,
+            "output": 483,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 12400,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "read_file",
+            "write_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "C exact routing and empty tool selection",
+      "run_id": "8a06b5c6f6d5",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "ornith35",
+          "number": 1,
+          "session_id": "magazine-71ee2135487444f3b0fa157b8fc83341",
+          "model": "custom/hf.co/AtomicChat/Ornith-1.5-35B-A3B-GGUF:Q4_K_M",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T09:40:53+00:00",
+          "finished": "2026-11-21T09:41:12+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 820,
+            "output": 67,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 887,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "ornith9",
+          "number": 1,
+          "session_id": "magazine-62b2b45cf6ab46ba806a91b27a189404",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T09:41:12+00:00",
+          "finished": "2026-11-21T09:41:25+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 798,
+            "output": 127,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 925,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "Authoritative HALT stops downstream",
+      "run_id": "23970f6fe563",
+      "status": "HALTED",
+      "display_status": "HALTED",
+      "attempts": [
+        {
+          "cartridge": "halt",
+          "number": 1,
+          "session_id": "magazine-e8e270a89e594c91a3f4049295c2d40f",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "halted",
+          "code": "HALT_RECEIVED",
+          "started": "2026-11-21T09:43:07+00:00",
+          "finished": "2026-11-21T09:43:18+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 806,
+            "output": 425,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1231,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "H sequential",
+      "run_id": "1386cff2e007",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "A1",
+          "number": 1,
+          "session_id": "magazine-ac87d4ae2f1f408a80a3e04ad500f00f",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:04:33+00:00",
+          "finished": "2026-11-21T05:04:54+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 4,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 11153,
+            "output": 390,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 11543,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "terminal"
+          ],
+          "selected_toolsets": [
+            "terminal"
+          ],
+          "active_tools": [
+            "terminal",
+            "tool_call",
+            "tool_describe",
+            "tool_search"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "A2",
+          "number": 1,
+          "session_id": "magazine-25cb97b6315a4f82aed2de4716355648",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:04:54+00:00",
+          "finished": "2026-11-21T05:05:03+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 793,
+            "output": 301,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1094,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "H sequential",
+      "run_id": "0fda827b5d2c",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "B1",
+          "number": 1,
+          "session_id": "magazine-4cf2bea607f54075b514ead515e6a67e",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:05:03+00:00",
+          "finished": "2026-11-21T05:05:26+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 5,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 14308,
+            "output": 550,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 14858,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "terminal"
+          ],
+          "selected_toolsets": [
+            "terminal"
+          ],
+          "active_tools": [
+            "terminal",
+            "tool_call",
+            "tool_describe",
+            "tool_search"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "B2",
+          "number": 1,
+          "session_id": "magazine-bf1d1d711e8c4ed49bbab176a69704fa",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:05:26+00:00",
+          "finished": "2026-11-21T05:05:36+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 793,
+            "output": 420,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1213,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "H round_robin",
+      "run_id": "4168fe94475f",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "A1",
+          "number": 1,
+          "session_id": "magazine-7b9f3f46763b43a8a5601c1d57407c96",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:05:56+00:00",
+          "finished": "2026-11-21T05:06:17+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 4,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 11111,
+            "output": 495,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 11606,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "terminal"
+          ],
+          "selected_toolsets": [
+            "terminal"
+          ],
+          "active_tools": [
+            "terminal",
+            "tool_call",
+            "tool_describe",
+            "tool_search"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "A2",
+          "number": 1,
+          "session_id": "magazine-b8a127bf5a9044dfaa820858e0278c62",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:06:36+00:00",
+          "finished": "2026-11-21T05:06:49+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 793,
+            "output": 591,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1384,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "H round_robin",
+      "run_id": "20a575515ee5",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "B1",
+          "number": 1,
+          "session_id": "magazine-c51a0d5993894926ba467897edb7e3ac",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:06:17+00:00",
+          "finished": "2026-11-21T05:06:36+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 3,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 8337,
+            "output": 385,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 8722,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "terminal"
+          ],
+          "selected_toolsets": [
+            "terminal"
+          ],
+          "active_tools": [
+            "terminal",
+            "tool_call",
+            "tool_describe",
+            "tool_search"
+          ],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "B2",
+          "number": 1,
+          "session_id": "magazine-fcf43a92415c47fb83179e62b61a6e04",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:06:50+00:00",
+          "finished": "2026-11-21T05:07:01+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 793,
+            "output": 493,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1286,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "D STOP confirms termination and prevents dispatch",
+      "run_id": "32240825b6b5",
+      "status": "HALTED",
+      "display_status": "STOPPED",
+      "attempts": [
+        {
+          "cartridge": "sleep",
+          "number": 1,
+          "session_id": "magazine-6d67118b72654d489a98dbce4c205f22",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "WORKER_FAILED",
+          "started": "2026-11-21T09:42:07+00:00",
+          "finished": "2026-11-21T09:42:53+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 2,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 2584,
+            "output": 97,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 2681,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "terminal"
+          ],
+          "selected_toolsets": [
+            "terminal"
+          ],
+          "active_tools": [
+            "terminal",
+            "tool_call",
+            "tool_describe",
+            "tool_search"
+          ],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "Per-attempt timeout terminates real native tool and stops downstream",
+      "run_id": "8e6f7af09734",
+      "status": "HALTED",
+      "display_status": "HALTED",
+      "attempts": [
+        {
+          "cartridge": "wait",
+          "number": 1,
+          "session_id": "magazine-cbdd4464df8a462caa65f36fee7b844d",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "ATTEMPT_TIMEOUT",
+          "started": "2026-11-21T09:40:02+00:00",
+          "finished": "2026-11-21T09:40:42+00:00",
+          "tokens": {
+            "state": "unavailable",
+            "available": false,
+            "incomplete": true,
+            "input": null,
+            "output": null,
+            "cache_read": null,
+            "cache_write": null,
+            "total": null,
+            "reasoning": null,
+            "rounds": 2,
+            "rounds_reported": 0,
+            "source": "usage_not_reported"
+          },
+          "observed_native_tools": [
+            "terminal"
+          ],
+          "selected_toolsets": [
+            "terminal"
+          ],
+          "active_tools": [
+            "terminal",
+            "tool_call",
+            "tool_describe",
+            "tool_search"
+          ],
+          "timeout_seconds": 40
+        }
+      ]
+    },
+    {
+      "scenario": "Antiloop stops repeated actual native tool errors",
+      "run_id": "cd325e66a65a",
+      "status": "HALTED",
+      "display_status": "HALTED",
+      "attempts": [
+        {
+          "cartridge": "repeat",
+          "number": 1,
+          "session_id": "magazine-2359e27b6c734e17b405f6daf1c870b8",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "LOOP_DETECTED",
+          "started": "2026-11-21T09:45:43+00:00",
+          "finished": "2026-11-21T09:46:08+00:00",
+          "tokens": {
+            "state": "unavailable",
+            "available": false,
+            "incomplete": true,
+            "input": null,
+            "output": null,
+            "cache_read": null,
+            "cache_write": null,
+            "total": null,
+            "reasoning": null,
+            "rounds": 3,
+            "rounds_reported": 0,
+            "source": "usage_not_reported"
+          },
+          "observed_native_tools": [
+            "read_file"
+          ],
+          "selected_toolsets": [
+            "file"
+          ],
+          "active_tools": [
+            "patch",
+            "read_file",
+            "search_files",
+            "write_file"
+          ],
+          "timeout_seconds": 180
+        }
+      ]
+    },
+    {
+      "scenario": "once",
+      "run_id": "f7ec533f063e",
+      "status": "COMPLETED",
+      "display_status": "COMPLETED",
+      "attempts": [
+        {
+          "cartridge": "fault",
+          "number": 1,
+          "session_id": "magazine-6d497cd460384797b60a29eb38bff481",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "RESULT_MISSING",
+          "started": "2026-11-21T05:13:57+00:00",
+          "finished": "2026-11-21T05:14:09+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 787,
+            "output": 518,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1305,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "fault",
+          "number": 2,
+          "session_id": "magazine-7e19b5320297418b93ea38b2593591f0",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "done",
+          "code": null,
+          "started": "2026-11-21T05:14:09+00:00",
+          "finished": "2026-11-21T05:14:24+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 2,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 2396,
+            "output": 685,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 3081,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "bash"
+          ],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    },
+    {
+      "scenario": "always",
+      "run_id": "88d8e585b0c5",
+      "status": "HALTED",
+      "display_status": "HALTED",
+      "attempts": [
+        {
+          "cartridge": "fault",
+          "number": 1,
+          "session_id": "magazine-e0fa4551f1344add98cc381b08ba1f2b",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "RESULT_MISSING",
+          "started": "2026-11-21T05:14:31+00:00",
+          "finished": "2026-11-21T05:14:40+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 787,
+            "output": 240,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1027,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "fault",
+          "number": 2,
+          "session_id": "magazine-c8251ec49cd14058ad941f96db840bfc",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "RESULT_MISSING",
+          "started": "2026-11-21T05:14:40+00:00",
+          "finished": "2026-11-21T05:14:52+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 961,
+            "output": 561,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1522,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "fault",
+          "number": 3,
+          "session_id": "magazine-fc2c30e52ac24060929dda7fd242818d",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "RESULT_MISSING",
+          "started": "2026-11-21T05:14:52+00:00",
+          "finished": "2026-11-21T05:15:01+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 963,
+            "output": 263,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1226,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "fault",
+          "number": 4,
+          "session_id": "magazine-c08d424b7669480b8fd2fb6faaae76fc",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "RESULT_MISSING",
+          "started": "2026-11-21T05:15:01+00:00",
+          "finished": "2026-11-21T05:15:10+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 1,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 962,
+            "output": 301,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 1263,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        },
+        {
+          "cartridge": "fault",
+          "number": 5,
+          "session_id": "magazine-c646a9aab87d46d780981da381421fa5",
+          "model": "custom/bonsai-2:27b",
+          "provider": "custom",
+          "status": "failed",
+          "code": "RESULT_MISSING",
+          "started": "2026-11-21T05:15:10+00:00",
+          "finished": "2026-11-21T05:15:28+00:00",
+          "tokens": {
+            "available": true,
+            "rounds": 2,
+            "rounds_reported": 1,
+            "source": "hermes_native_session_cumulative",
+            "input": 2300,
+            "output": 983,
+            "cache_read": null,
+            "cache_write": null,
+            "total": 3283,
+            "reasoning": null,
+            "incomplete": true,
+            "state": "partial",
+            "coverage": "Native cumulative reported counters; per-call coverage and unreported cache dimensions unavailable"
+          },
+          "observed_native_tools": [
+            "bash"
+          ],
+          "selected_toolsets": [],
+          "active_tools": [],
+          "timeout_seconds": 1800
+        }
+      ]
+    }
+  ],
+  "browser_reports": {
+    "firefox-final": {
+      "browser": "firefox",
+      "errors": [],
+      "loaded": true,
+      "checks": [
+        "ZIP import and no tools selected by default",
+        "Shared, independent, checkbox bulk and group model assignment",
+        "Suggestions import, before/after validation and explicit Apply",
+        "Prepare does not start inference",
+        "Single-cartridge ledger, navigation, five attempts, long errors and partial tokens",
+        "Complete searchable chat list, tool arguments/results and inert HTML",
+        "Run, panel and cartridge selection persist across refresh",
+        "Full-run JSONL download",
+        "Confirmation deletion and reversible run restoration",
+        "Light/dark appearance and narrow layout"
+      ]
+    },
+    "chromium-final": {
+      "browser": "chromium",
+      "errors": [],
+      "loaded": true,
+      "checks": [
+        "ZIP import and no tools selected by default",
+        "Shared, independent, checkbox bulk and group model assignment",
+        "Suggestions import, before/after validation and explicit Apply",
+        "Prepare does not start inference",
+        "Single-cartridge ledger, navigation, five attempts, long errors and partial tokens",
+        "Complete searchable chat list, tool arguments/results and inert HTML",
+        "Run, panel and cartridge selection persist across refresh",
+        "Full-run JSONL download",
+        "Confirmation deletion and reversible run restoration",
+        "Light/dark appearance and narrow layout"
+      ]
+    },
+    "firefox-release": {
+      "browser": "firefox",
+      "errors": [],
+      "loaded": true,
+      "checks": [
+        "ZIP import and no tools selected by default",
+        "Shared, independent, checkbox bulk and group model assignment",
+        "Suggestions import, before/after validation and explicit Apply",
+        "Prepare does not start inference",
+        "Single-cartridge ledger, navigation, five attempts, long errors and partial tokens",
+        "Complete searchable chat list, tool arguments/results and inert HTML",
+        "Run, panel and cartridge selection persist across refresh",
+        "Full-run JSONL download",
+        "Confirmation deletion and reversible run restoration",
+        "Light/dark appearance and narrow layout"
+      ]
+    },
+    "chromium-release": {
+      "browser": "chromium",
+      "errors": [],
+      "loaded": true,
+      "checks": [
+        "ZIP import and no tools selected by default",
+        "Shared, independent, checkbox bulk and group model assignment",
+        "Suggestions import, before/after validation and explicit Apply",
+        "Prepare does not start inference",
+        "Single-cartridge ledger, navigation, five attempts, long errors and partial tokens",
+        "Complete searchable chat list, tool arguments/results and inert HTML",
+        "Run, panel and cartridge selection persist across refresh",
+        "Full-run JSONL download",
+        "Confirmation deletion and reversible run restoration",
+        "Light/dark appearance and narrow layout"
+      ]
+    },
+    "browser-persistence": [
+      {
+        "browser": "firefox",
+        "run_id": "8735d7fbb815",
+        "run_panel_cartridge_and_attempt_expansion_restored": true,
+        "inference_started": false
+      },
+      {
+        "browser": "chromium",
+        "run_id": "8735d7fbb815",
+        "run_panel_cartridge_and_attempt_expansion_restored": true,
+        "inference_started": false
+      }
+    ],
+    "browser-live": [
+      {
+        "browser": "firefox",
+        "run_id": "b5ba9678a756",
+        "live_history_live_switch": true,
+        "execution_remained_active": true,
+        "errors": []
+      },
+      {
+        "browser": "chromium",
+        "run_id": "b5ba9678a756",
+        "live_history_live_switch": true,
+        "execution_remained_active": true,
+        "errors": []
+      }
+    ]
+  },
+  "engine_crash": {
+    "passed": true,
+    "interrupted_run": "3e8b8701813b",
+    "queued_run": "604b5555980e",
+    "captured_test_descendants": [
+      {
+        "pid": 422,
+        "started": 1795238702.78
+      },
+      {
+        "pid": 578,
+        "started": 1795238710.06
+      },
+      {
+        "pid": 596,
+        "started": 1795238710.11
+      },
+      {
+        "pid": 598,
+        "started": 1795238710.11
+      }
+    ],
+    "unknown_blocks_start": true,
+    "queue_and_chat_retained": true,
+    "automatic_resume": false,
+    "explicit_reconciliation_and_recovery": true,
+    "attempts_before_and_after": 1
+  },
+  "container_restart_and_exports": {
+    "passed_before": true,
+    "run_id": "e5898b9d4d22",
+    "exports": {
+      "download": {
+        "file": "Magazine-e5898b9d4d22-results.zip",
+        "bytes": 806834,
+        "sha256": "48ecdbadd26866a11d2fb5153e682a4104a56d9c330cd1275127534a738f3a45"
+      },
+      "download_jsonl": {
+        "file": "magazine-run-e5898b9d4d22.jsonl",
+        "bytes": 880346,
+        "sha256": "00d7dac6c4ad9f5649a471d990176fdd0667c0b3c8310da43ff400582ac4cb63"
+      },
+      "download_ledger": {
+        "file": "e5898b9d4d22-ledger.json",
+        "bytes": 18337,
+        "sha256": "e0778033123280c195dc944b4610d5a1263b64d8ff8f8dec3d2adca77b679c95"
+      },
+      "download_history": {
+        "file": "e5898b9d4d22-execution-history.jsonl",
+        "bytes": 767818,
+        "sha256": "d5784a880c500397d39d753854d7964511d81e3f07ad04650f0b7745dd1d2b65"
+      }
+    },
+    "unauthorised_requests_denied": true,
+    "socket_mode": "0600",
+    "passed_after": true,
+    "container_restart_preserved_run_ledger_artifacts_chats": true,
+    "automatic_resume": false
+  },
+  "deterministic_checks": [
+    {
+      "test": "test_safety.py",
+      "returncode": 0,
+      "output": "test_antiloop_visible_structured_events_only (__main__.ProtocolTests.test_antiloop_visible_structured_events_only) ... ok\ntest_done_halt_and_quoted_halt (__main__.ProtocolTests.test_done_halt_and_quoted_halt) ... ok\ntest_five_attempt_ceiling_and_stop (__main__.ProtocolTests.test_five_attempt_ceiling_and_stop) ... ok\ntest_native_final_publication_forms (__main__.ProtocolTests.test_native_final_publication_forms) ... ok\ntest_secret_redaction_and_visible_reasoning_filter (__main__.ProtocolTests.test_secret_redaction_and_visible_reasoning_filter) ... ok\ntest_storage_retries_are_separate_and_transient_only (__main__.ProtocolTests.test_storage_retries_are_separate_and_transient_only) ... ok\ntest_strict_json_and_identity (__main__.ProtocolTests.test_strict_json_and_identity) ... ok\ntest_tokens_unavailable_zero_partial_and_cumulative (__main__.ProtocolTests.test_tokens_unavailable_zero_partial_and_cumulative) ... ok\ntest_archive_attacks_and_yml (__main__.StorageTests.test_archive_attacks_and_yml) ... /opt/hermes/tools/python-3.14.9+20261021-linux-x64/lib/python3.14/zipfile/__init__.py:1755: UserWarning: Duplicate name: 'a'\n  return self._open_to_write(zinfo, force_zip64=force_zip64)\nok\ntest_commit_crash_reconciles_without_model_replay (__main__.StorageTests.test_commit_crash_reconciles_without_model_replay) ... ok\ntest_readback_and_tamper (__main__.StorageTests.test_readback_and_tamper) ... ok\ntest_single_process_owner (__main__.StorageTests.test_single_process_owner) ... ok\ntest_sqlite_scheduler_restart_requires_start (__main__.StorageTests.test_sqlite_scheduler_restart_requires_start) ... ok\ntest_yaml_duplicate_alias_and_unknown_fields (__main__.StorageTests.test_yaml_duplicate_alias_and_unknown_fields) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.856s\n\nOK\n"
+    },
+    {
+      "test": "native_lineage.py",
+      "returncode": 0,
+      "output": "PASS native compression lineage, authoritative tip final and private reasoning exclusion\n"
+    },
+    {
+      "test": "timeout_diagnostic.py",
+      "returncode": 0,
+      "output": "PASS actual worker/descendant timeout cleanup without inference\nPASS cleanup exception always persists UNKNOWN admission gate\n"
+    }
+  ],
+  "installer_lifecycle_passed": true,
+  "installer_runtime_service_ipc": true,
+  "normal_host_smoke": {
+    "passed": true,
+    "browsers": [
+      {
+        "browser": "firefox",
+        "loaded": true,
+        "errors": []
+      },
+      {
+        "browser": "chromium",
+        "loaded": true,
+        "errors": []
+      }
+    ],
+    "model_count": 23,
+    "toolset_count": 20,
+    "active_runs": 0,
+    "inference_started": false,
+    "native_data_retained": true
+  }
+}

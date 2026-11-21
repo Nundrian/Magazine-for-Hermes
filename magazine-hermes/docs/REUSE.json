@@ -1,0 +1,333 @@
+{
+  "license": "MIT; retained LICENSE",
+  "files": [
+    {
+      "path": "antiloop.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "61e23b6668c510bdfcad7b8e1c6858d408ca20b103907aa635585d7b2fff96e8",
+      "current_sha256": "61e23b6668c510bdfcad7b8e1c6858d408ca20b103907aa635585d7b2fff96e8",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "beta5_helpers.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "7e85f34bccd792c30dcc927a109c3ae8a2d6d85b23d0c518f486cdedfd5f8004",
+      "current_sha256": "2575c3420940546862a75f01531a765c72a23b19482ea09c3fc03503216faed2",
+      "reuse": "adapted"
+    },
+    {
+      "path": "executor.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "127875ba14c28303ba307066c171a6e161424e056fe79f0c7165e56909bc4988",
+      "current_sha256": "643de071162f3cf99aaa6650e5cad320aaef345d6784f19d7c6de23dadede3d5",
+      "reuse": "adapted"
+    },
+    {
+      "path": "handover.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "a97285305638db213dae88aeb4795967824b08811944e15a8e2318e47ffcb1b3",
+      "current_sha256": "300be8a0741bf99fdea86ec4cc7a8666c65889cf84c95379b8ddcd1eb4f3e267",
+      "reuse": "adapted"
+    },
+    {
+      "path": "ledger.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "eb013439a7845b8d702fc2441b967c2fbf9284b9b72f6f46bd7f6745745377a2",
+      "current_sha256": "233bed347d516bbb07f8d30024fe101dbb2cd9dc2c79aa84f99f63830d5f4f2e",
+      "reuse": "adapted"
+    },
+    {
+      "path": "magazine/__init__.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "bc7ff7bb2fafe636163c1d1e84e384849bd2940691b3ed844bdd65a326ef690e",
+      "current_sha256": "bc7ff7bb2fafe636163c1d1e84e384849bd2940691b3ed844bdd65a326ef690e",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/async_runner.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "8155f53929647c4918117abad51f9e2f3a9baf67344adb3da2bf7f6fe8195371",
+      "current_sha256": "8155f53929647c4918117abad51f9e2f3a9baf67344adb3da2bf7f6fe8195371",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/complete.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "07cd12c6f75bb9faafa327bd0c53350304501083631d0fa6ac8f53d2f2184e2b",
+      "current_sha256": "07cd12c6f75bb9faafa327bd0c53350304501083631d0fa6ac8f53d2f2184e2b",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/document.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "d353e80932946fc15b3f439e0c53284bdb7395ce92f2071633540bb97e1ac3fa",
+      "current_sha256": "d353e80932946fc15b3f439e0c53284bdb7395ce92f2071633540bb97e1ac3fa",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/durability.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "f179bab7b0ebe0061028e662cf2bf8dd21893443e7fddc76eb1aa5337c8a9c32",
+      "current_sha256": "f179bab7b0ebe0061028e662cf2bf8dd21893443e7fddc76eb1aa5337c8a9c32",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/entrypoint.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "973197af7c26a253b07b1ff128b851c577dec2a963f82b5712dc79e568a3d696",
+      "current_sha256": "973197af7c26a253b07b1ff128b851c577dec2a963f82b5712dc79e568a3d696",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/execute.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "a046b6f75faca63ee6f5c2de99acbaaed8959503f52e5acf3a3ded9f4811acd8",
+      "current_sha256": "a046b6f75faca63ee6f5c2de99acbaaed8959503f52e5acf3a3ded9f4811acd8",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/execution_meta.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "c64da1a2df226b00c0bf8cf1f59fe8c229821eaacabd9a69d429e6785d2623ed",
+      "current_sha256": "c64da1a2df226b00c0bf8cf1f59fe8c229821eaacabd9a69d429e6785d2623ed",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/orchestration.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "1ac5dfb5da24da10f7b2cc30f9e7262468a57593e7ffd6180b6031b2ff703d32",
+      "current_sha256": "1ac5dfb5da24da10f7b2cc30f9e7262468a57593e7ffd6180b6031b2ff703d32",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/package.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "aceb8886ae23de420432803900f34100a482501a2dd9317886b5ca7dd49c5f41",
+      "current_sha256": "735353664d0eedc003ee364288fdfc78c41e1b827a9a2127ac0501f92f94ed50",
+      "reuse": "adapted"
+    },
+    {
+      "path": "magazine/paths.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "22da47b3757b8843313e6ee299d1b05e4294699e8144598380fc5a3406be752c",
+      "current_sha256": "22da47b3757b8843313e6ee299d1b05e4294699e8144598380fc5a3406be752c",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/recovery.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "73547271f2b1f1cbd19e52a3dd7fa56e6addfba2d9f183937ee8663a9b28cec9",
+      "current_sha256": "73547271f2b1f1cbd19e52a3dd7fa56e6addfba2d9f183937ee8663a9b28cec9",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/recovery_action.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "36d1832fd63057609f957a8509a76d1920f525f14953e24d1ce7cbffcfe8f3b3",
+      "current_sha256": "36d1832fd63057609f957a8509a76d1920f525f14953e24d1ce7cbffcfe8f3b3",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/recovery_transition.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "d70c5e06ceb331c36e04091f7762ae7fa1ca6774e3ddc0de9474b35936c4aacc",
+      "current_sha256": "d70c5e06ceb331c36e04091f7762ae7fa1ca6774e3ddc0de9474b35936c4aacc",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/result_store.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "74f383517c4ecb6bacd13d9ec405cba739236b08739f9fb4ab147eff3ae40003",
+      "current_sha256": "74f383517c4ecb6bacd13d9ec405cba739236b08739f9fb4ab147eff3ae40003",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/routing.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "0653568badaedc9141a773b79d32fa218f9afd9340492dddfca2d79e27ecf16c",
+      "current_sha256": "0653568badaedc9141a773b79d32fa218f9afd9340492dddfca2d79e27ecf16c",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/run_action.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "7068b21538464bc80d0d78b0518f7a7a6e9e9fa19847423eb43cb806175092dd",
+      "current_sha256": "7068b21538464bc80d0d78b0518f7a7a6e9e9fa19847423eb43cb806175092dd",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/run_control.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "7df6361dff9743590c1987f6b3027f45e56cae59aec3006d69f425becf608493",
+      "current_sha256": "7df6361dff9743590c1987f6b3027f45e56cae59aec3006d69f425becf608493",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/run_lock.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "3c3c693953f0f031be37e3df735dbd8058d5de0827ddf8def6166eacea65a648",
+      "current_sha256": "3c3c693953f0f031be37e3df735dbd8058d5de0827ddf8def6166eacea65a648",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/run_loop.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "e7ce02b6e7feb4fab95c52ab9f307458d4655145916ce27fd4ad7538cc6abde1",
+      "current_sha256": "e7ce02b6e7feb4fab95c52ab9f307458d4655145916ce27fd4ad7538cc6abde1",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/run_preparation.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "a6f61158dd09eb12126c2bc2a0702f9d88437d420942d585b9f41d9aae32161a",
+      "current_sha256": "a6f61158dd09eb12126c2bc2a0702f9d88437d420942d585b9f41d9aae32161a",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/run_transition.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "e5c27cf753c53ec4c8d76b0c243fd03c0ebc6b330c1213c47fc7104724715ed3",
+      "current_sha256": "e5c27cf753c53ec4c8d76b0c243fd03c0ebc6b330c1213c47fc7104724715ed3",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/runtime_dispatch.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "b6ce34cd09d424d804947308fba0f128201ea985d6a3ce8e791ce10bd2570ab6",
+      "current_sha256": "b6ce34cd09d424d804947308fba0f128201ea985d6a3ce8e791ce10bd2570ab6",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/runtime_identity.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "d2611d2cfff129c453e10aa4fdae45a781f9525d39a4870e6879e87eb0d9a8be",
+      "current_sha256": "d2611d2cfff129c453e10aa4fdae45a781f9525d39a4870e6879e87eb0d9a8be",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/schema.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "45b407ab575780ead6cbf363f58f3a9dd66a9d41569702ff3e0256cd65caee59",
+      "current_sha256": "45b407ab575780ead6cbf363f58f3a9dd66a9d41569702ff3e0256cd65caee59",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/startup_inspection.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "77078f80c92efad5e5c45e03253146a11da5324d53fd6bb1bdc12ece9331d1ba",
+      "current_sha256": "77078f80c92efad5e5c45e03253146a11da5324d53fd6bb1bdc12ece9331d1ba",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/state.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "2c56c1f269beed4a023cba369bac414e321eaf29d868626498ce198a9a7222fa",
+      "current_sha256": "2c56c1f269beed4a023cba369bac414e321eaf29d868626498ce198a9a7222fa",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/state_store.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "5b3d268dcfa8b327b25c4f53deacfd5f8e5672bf8550afc9e41aa9306dc9c3fb",
+      "current_sha256": "5b3d268dcfa8b327b25c4f53deacfd5f8e5672bf8550afc9e41aa9306dc9c3fb",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "magazine/webui_dispatch.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "9869165601e93296caf3573ddc885afa9f7bd2f8dd918489a16443078aa24466",
+      "current_sha256": "9869165601e93296caf3573ddc885afa9f7bd2f8dd918489a16443078aa24466",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "model_selection.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "dfa8cf14915b549afdf4dcea4a4141a9a7c266e47eed9aa9d33c4d4a8588eb85",
+      "current_sha256": "dfa8cf14915b549afdf4dcea4a4141a9a7c266e47eed9aa9d33c4d4a8588eb85",
+      "reuse": "unchanged"
+    },
+    {
+      "path": "protocol.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "bd16226229d52904ad7f8764b8779033f4c6d753309b424fab12b912988a1c57",
+      "current_sha256": "b1d00851177debcb185f63cf69437f186045300ead21b14f54cb0232f78a2b7d",
+      "reuse": "adapted"
+    },
+    {
+      "path": "run_export.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "21ca7bcfb82d92fe1031328a93187853703314958149d7c75bf1c0885fe548d0",
+      "current_sha256": "24f402a2a3232a02676db367698ea114d5a26e862b856246498430b91fe82dc0",
+      "reuse": "adapted"
+    },
+    {
+      "path": "scheduler.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "a7818e769f1131664256596e5cf44d9cb75a300f931b141201dba212ea60267f",
+      "current_sha256": "81e9c3ef40a56694cadae3c1442290de854d545f9f36d4f23fd98cbcc21d1831",
+      "reuse": "adapted"
+    },
+    {
+      "path": "service.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "d90960fab4a06d4d041da9594e62cf8017ad21a140a1e43a01fce5f46b63c0fb",
+      "current_sha256": "207717c9895b368a9d6e9d44a3f1680fa96538bd712e449a01fd3027381d291b",
+      "reuse": "adapted"
+    },
+    {
+      "path": "tokens.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "e2cc17775b0d7c994d36d1f020505892ea52fc7cd31cb28020e83611ed4ba7e6",
+      "current_sha256": "b36e1e672af8afda843d582394bb2e107887bac5b7c2fb6817ef7cd5dfa04748",
+      "reuse": "adapted"
+    },
+    {
+      "path": "ui_support.py",
+      "source": "Nundrian/Magazine-for-Pi-WebUI",
+      "source_commit": "2a103b15be374cd1ac6b629ce8354e545da6f983",
+      "source_sha256": "5815a8f892e99dc1e17cd39a758705098a10e5dbec5555031ee3d5ccad65067f",
+      "current_sha256": "b06607ad5c320ea5c506ebccec83c9e447de7687b34b733527b89632f1195f96",
+      "reuse": "adapted"
+    }
+  ]
+}

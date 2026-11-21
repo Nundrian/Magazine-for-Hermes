@@ -1,0 +1,2 @@
+# Preserve source bytes so SOURCE-SHA256.json and reproducible ZIPs agree on Windows.
+* -text

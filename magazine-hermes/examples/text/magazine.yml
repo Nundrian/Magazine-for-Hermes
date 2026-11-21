@@ -1,0 +1,9 @@
+schema_version: "1.0"
+name: Two bounded text cartridges
+cartridges:
+  - id: first
+    model: general
+    prompt: The complete text deliverable is FIRST. Put FIRST in the result note.
+  - id: second
+    model: general
+    prompt: The complete text deliverable is SECOND. Put SECOND in the result note.
