@@ -1,0 +1,275 @@
+{
+  "inference_started": false,
+  "existing_real_test_run": "e5898b9d4d22",
+  "screens": [
+    {
+      "tab": "workflows",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-id=zip]",
+          "label": "1 Import a workflow ZIP",
+          "box": {
+            "x": 635.046875,
+            "y": 481.6875,
+            "width": 279,
+            "height": 39.6875
+          }
+        },
+        {
+          "selector": "[data-id=projects]",
+          "label": "2 Choose a saved workflow",
+          "box": {
+            "x": 943.1875,
+            "y": 377,
+            "width": 389.1875,
+            "height": 39
+          }
+        },
+        {
+          "selector": "[data-id=load-workflow]",
+          "label": "3 Review its steps",
+          "box": {
+            "x": 1346.375,
+            "y": 381.40625,
+            "width": 154.0625,
+            "height": 37.59375
+          }
+        }
+      ]
+    },
+    {
+      "tab": "setup",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-id=shared-model]",
+          "label": "1 Choose the exact model",
+          "box": {
+            "x": 540,
+            "y": 469.046875,
+            "width": 844.34375,
+            "height": 39
+          }
+        },
+        {
+          "selector": ".tool-settings > summary",
+          "label": "2 Review tools and safeguards",
+          "box": {
+            "x": 553,
+            "y": 711.109375,
+            "width": 1044,
+            "height": 33.6875
+          }
+        },
+        {
+          "selector": "[data-id=prepare]",
+          "label": "3 Prepare without starting",
+          "box": {
+            "x": 540,
+            "y": 790.796875,
+            "width": 139.46875,
+            "height": 37.59375
+          }
+        }
+      ]
+    },
+    {
+      "tab": "overview",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-id=previous-runs]",
+          "label": "1 Open saved work",
+          "box": {
+            "x": 555,
+            "y": 674.796875,
+            "width": 764.390625,
+            "height": 39
+          }
+        },
+        {
+          "selector": "[data-id=scheduler-mode]",
+          "label": "2 Choose queue order",
+          "box": {
+            "x": 540,
+            "y": 775.171875,
+            "width": 347.328125,
+            "height": 39
+          }
+        },
+        {
+          "selector": "[data-id=dashboard]",
+          "label": "3 Follow project progress",
+          "box": {
+            "x": 541,
+            "y": 1048.6875,
+            "width": 1068,
+            "height": 69.9375
+          }
+        },
+        {
+          "selector": ".resource-strip",
+          "label": "4 CPU, RAM and Workspace",
+          "box": {
+            "x": 1647.296875,
+            "y": 1240,
+            "width": 262.703125,
+            "height": 34
+          }
+        }
+      ]
+    },
+    {
+      "tab": "ledger",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-id=cartridge-select]",
+          "label": "1 Choose one cartridge",
+          "box": {
+            "x": 540,
+            "y": 626.546875,
+            "width": 784.296875,
+            "height": 39
+          }
+        },
+        {
+          "selector": "[data-id=ledger] .compact-ledger",
+          "label": "2 Read status and attempts",
+          "box": {
+            "x": 540,
+            "y": 748.234375,
+            "width": 1070,
+            "height": 80.75
+          }
+        },
+        {
+          "selector": "[data-id=ledger] details.attempt",
+          "label": "3 Expand the evidence",
+          "box": {
+            "x": 540,
+            "y": 906.046875,
+            "width": 1070,
+            "height": 54.6875
+          }
+        }
+      ]
+    },
+    {
+      "tab": "chats",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-id=chat-run-filter]",
+          "label": "1 Filter saved conversations",
+          "box": {
+            "x": 540,
+            "y": 652.296875,
+            "width": 299.59375,
+            "height": 39
+          }
+        },
+        {
+          "selector": "[data-id=chat-list]",
+          "label": "2 Choose a real attempt",
+          "box": {
+            "x": 540,
+            "y": 872.046875,
+            "width": 299.59375,
+            "height": 419.5
+          }
+        },
+        {
+          "selector": "[data-id=chat-messages]",
+          "label": "3 Read messages and tool results",
+          "box": {
+            "x": 853.59375,
+            "y": 661.546875,
+            "width": 756.40625,
+            "height": 832
+          }
+        }
+      ]
+    },
+    {
+      "tab": "results",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-id=download]",
+          "label": "1 Download checked artifacts",
+          "box": {
+            "x": 710.03125,
+            "y": 603.859375,
+            "width": 162.390625,
+            "height": 37.59375
+          }
+        },
+        {
+          "selector": "[data-id=download-jsonl]",
+          "label": "2 Export the full run record",
+          "box": {
+            "x": 878.421875,
+            "y": 603.859375,
+            "width": 166.859375,
+            "height": 37.59375
+          }
+        },
+        {
+          "selector": "[data-id=results]",
+          "label": "3 Inspect saved results",
+          "box": {
+            "x": 540,
+            "y": 686.140625,
+            "width": 1070,
+            "height": 71.375
+          }
+        }
+      ]
+    },
+    {
+      "tab": "manage",
+      "width": 1920,
+      "height": 1280,
+      "targets": [
+        {
+          "selector": "[data-panel=manage] h2",
+          "label": "1 Manage stored Magazine work",
+          "box": {
+            "x": 540,
+            "y": 561.0625,
+            "width": 1070,
+            "height": 23.796875
+          }
+        },
+        {
+          "selector": "[data-id=manage-templates] .manage-row",
+          "label": "2 Templates and runs are separate",
+          "box": {
+            "x": 540,
+            "y": 673.796875,
+            "width": 1070,
+            "height": 94.28125
+          }
+        },
+        {
+          "selector": "[data-id=manage-templates] button",
+          "label": "3 Review before deleting",
+          "box": {
+            "x": 540,
+            "y": 712.484375,
+            "width": 102.9375,
+            "height": 37.59375
+          }
+        }
+      ]
+    }
+  ]
+}

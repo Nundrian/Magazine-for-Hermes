@@ -3,7 +3,7 @@
   "label": "Magazine",
   "description": "Bounded cartridge workflows, verified handovers and complete visible conversations",
   "icon": "Package",
-  "version": "0.1.0-hermes.rc2",
+  "version": "0.1.0-hermes.rc3",
   "tab": {"path": "/magazine", "position": "after:sessions"},
   "entry": "dist/index.js",
   "api": "plugin_api.py"

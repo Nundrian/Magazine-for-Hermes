@@ -1,108 +1,99 @@
 # Magazine for Hermes
 
-Run pre-authored cartridge workflows inside the native Hermes dashboard. Each
-attempt receives a fresh saved Hermes conversation, an exact model/provider and
-an explicit toolset. Magazine validates and commits results before advancing.
+Give Hermes a series of small jobs. Choose the models and tools, review the plan,
+then start when you are ready. Magazine keeps the work in order and saves what
+happened at every step.
 
-**Current tested pre-release: 0.1.0-hermes.rc2.**
+Each small job is called a **cartridge**. Each attempt gets a fresh saved chat.
+Magazine checks the result and declared files before passing work to the next job.
+You can inspect failed attempts, stop work, and download the results and records.
 
-[Download the plugin ZIP](https://github.com/Nundrian/Magazine-for-Hermes/releases/download/v0.1.0-hermes.rc2/Magazine-for-Hermes-0.1.0-hermes.rc2.zip)
-· [Release and example workflows](https://github.com/Nundrian/Magazine-for-Hermes/releases/tag/v0.1.0-hermes.rc2)
-· [SHA-256 checksums](https://github.com/Nundrian/Magazine-for-Hermes/releases/download/v0.1.0-hermes.rc2/SHA256SUMS.txt)
+**Current tested preview: 0.1.0-hermes.rc3.**
 
-## Features
+[Download Magazine](https://github.com/Nundrian/Magazine-for-Hermes/releases/download/v0.1.0-hermes.rc3/Magazine-for-Hermes-0.1.0-hermes.rc3.zip)
+· [Release and small example workflows](https://github.com/Nundrian/Magazine-for-Hermes/releases/tag/v0.1.0-hermes.rc3)
+· [Checksums](https://github.com/Nundrian/Magazine-for-Hermes/releases/download/v0.1.0-hermes.rc3/SHA256SUMS.txt)
 
-- Native dashboard tab with Overview, Workflows, Set up, Ledger, Chats, Results
-  and Manage.
-- Shared, individual, checkbox bulk and group model assignment; exact available
-  identifiers and explicit Hermes toolsets.
-- Sequential and Round Robin scheduling with process-safe execution ownership.
-- Verified `result_file_v1` publication, durable artifact checkpoints and guarded
-  handovers.
-- Five-attempt hard ceiling, separate per-attempt budgets, STOP, HALT, Antiloop,
-  explicit recovery and UNKNOWN execution reconciliation.
-- Persistent queue, saved native conversations, complete visible tool evidence,
-  compact cartridge/attempt ledger, reported usage and processing times.
-- ZIP results, complete JSONL/history exports and recoverable deletion.
-- Firefox and Chromium support. Magazine follows Hermes theme colours and fonts
-  by default, including visible panel, input and tab borders. Optional Magazine
-  dark/light palettes remain available.
+![Magazine Overview with arrows showing saved work, queue order, progress and the CPU/RAM/Workspace strip](docs/images/overview-annotated.png)
 
-## Compatibility
+[See all seven tabs with labelled screenshots](docs/UI-GUIDE.md).
+The pictures use a small completed test workflow, with original captures available
+alongside the annotated versions.
 
-This release is verified against **Hermes 0.23.3**, installed code identity
-`caafe5389ae585ef77387a962aee05b1bcf17029`. The compatibility gate checks that
-identity before execution. Changed Hermes builds require adapter acceptance.
+## What you can do
 
-The native runtime/provider configuration supplies credentials, context settings
-and model weights. Selected terminal/code tools retain the container's authority.
-Magazine is designed for one trusted dashboard operator. See
-[architecture and compatibility](magazine-hermes/docs/ARCHITECTURE.md) and
-[security and recovery](magazine-hermes/docs/SECURITY-RECOVERY.md).
+| Tab | What it is for |
+|---|---|
+| [Overview](docs/UI-GUIDE.md#overview) | Open saved work, see progress and choose which project runs next. |
+| [Workflows](docs/UI-GUIDE.md#workflows) | Import a workflow ZIP and review its jobs. |
+| [Set up](docs/UI-GUIDE.md#set-up) | Choose exact models and tools, review safeguards, and prepare the work. |
+| [Ledger](docs/UI-GUIDE.md#ledger) | See each job's status, attempts and recorded evidence. |
+| [Chats](docs/UI-GUIDE.md#chats) | Read the actual worker conversations, tool calls and errors. |
+| [Results](docs/UI-GUIDE.md#results) | Inspect saved results and download files or the full run record. |
+| [Manage](docs/UI-GUIDE.md#manage) | Review stored workflows and runs, and manage recoverable deletion. |
 
-## Install on Windows Docker Desktop
+Magazine follows the colours and fonts selected in Hermes. Firefox and Chromium
+are supported. The bottom-right strip shows CPU and RAM readings from Hermes and
+a Workspace shortcut. In Docker, those readings describe its Linux environment.
 
-1. Download and extract the release ZIP.
-2. Open PowerShell in the extracted `magazine` directory.
-3. Finish or stop active Magazine work, then run:
+## Start using it
+
+This preview was tested on **Hermes 0.23.3**, build
+`caafe5389ae585ef77387a962aee05b1bcf17029`, in Windows Docker Desktop.
+Magazine checks the build before running; a changed Hermes build needs verification.
+
+1. Download and extract the plugin ZIP linked above.
+2. Open PowerShell in its extracted `magazine` folder. Finish or stop any existing
+   Magazine work, then run:
 
    ```powershell
    powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\Install-Magazine.ps1 -Container hermes
    ```
 
-4. Reload the Hermes dashboard and select **Magazine** in the left sidebar's
-   **Plugins** section. Scroll the sidebar if needed.
-5. Import a bounded example ZIP, review model/tools and select **Prepare workflow**.
-   Select **Start workflow** explicitly when ready.
+3. Refresh Hermes. Select **Magazine** under **Plugins** in the left sidebar;
+   scroll the sidebar if needed.
+4. Import a small example ZIP in **Workflows**. Review its instructions, models and
+   tools in **Set up**, then select **Prepare workflow**.
+5. Select **Start workflow** when ready. Preparing or reopening work does not start it.
 
-The installer checks compatibility, refuses active or uncertain work, creates
-private backups of affected configuration/state/native SQLite stores and preserves
-unrelated settings. Preparing, opening and restoring work never start inference.
+The installer backs up affected code, settings and state. It keeps unrelated Hermes
+settings and existing data. [Full install, update and rollback instructions](magazine-hermes/docs/INSTALL.md).
 
-[Complete installation, update, uninstall and rollback instructions](magazine-hermes/docs/INSTALL.md).
+## How it protects the workflow
 
-## Validation
+- **You choose when work starts.** Reopening a page or restarting does not restart inference.
+- **The selected model and tools stay explicit.** Magazine refuses silent model replacement.
+- **Handover happens after checks.** It saves the successful chat and checked files
+  before the next job can use them.
+- **Failures remain visible.** Retries have time limits and a hard ceiling of five
+  attempts per cartridge. HALT stops automatic progress; Stop ends a started run.
+- **Uncertain execution blocks new work.** If Magazine cannot confirm what happened,
+  it requires inspection and explicit reconciliation before recovery.
 
-The rc1 execution baseline includes 13 selected real local-model runs and 28
-attempts covering DONE, HALT, retry/exhaustion, STOP, timeout, Antiloop, recovery,
-scheduling and restart. Fourteen deterministic safety tests and native storage /
-process checks cover integrity and failure boundaries. Native-model acceptance
-uses the installed Ornith 35B and Bonsai 27B weights.
+These safeguards check the execution contract and the identity of saved results.
+They cannot prove that any answer or project is correct. Add independent checks
+suited to your task. Permitted tools keep their normal Hermes/container authority.
 
-The rc2 theme correction was checked in actual Firefox and Chromium dashboards
-using Hermes Teal, Ember and Midnight, including live switching, visible controls,
-manual overrides and refresh persistence. Installed release browser checks are
-separate from source-mounted development checks.
+## Learn more
 
-- [Acceptance outcomes, failed probes and limits](magazine-hermes/docs/ACCEPTANCE.md)
-- [Theme correction](magazine-hermes/docs/THEME-UPDATE.md)
-- [Metrics-only acceptance results](magazine-hermes/docs/acceptance-results.json)
-- [Second critical audit](magazine-hermes/docs/SECOND-AUDIT.md)
+- [Illustrated user guide](docs/UI-GUIDE.md): every tab, its controls and the resource strip.
+- [In-depth technical guide](docs/TECHNICAL-GUIDE.md): preparation, models/tools,
+  checks, file/data handovers, scheduling, retries, Antiloop, STOP/HALT/UNKNOWN,
+  recovery, storage, exports and safeguard limits.
+- [Acceptance report](magazine-hermes/docs/ACCEPTANCE.md): real model runs,
+  deterministic checks, failed probes and untested cases.
+- [Theme checks](magazine-hermes/docs/THEME-UPDATE.md) and
+  [CPU/RAM/Workspace checks](magazine-hermes/docs/RESOURCE-STRIP.md).
+- [Source and reproducible builds](magazine-hermes/README.md).
 
-Execution-contract success and artifact hashes establish identity/integrity.
-Actual task correctness still requires task-specific checks. The reports retain
-this distinction and disclose untested cases, including a Docker Desktop daemon
-restart. Full native conversation evidence remains in private local test storage.
+The execution baseline includes 13 selected real local-model runs and 28 attempts.
+The theme and resource updates were separately checked in Firefox and Chromium,
+including the installed release. The reports distinguish real inference from
+fixtures and do not claim every possible scenario is tested.
 
-## Build and source
+## License
 
-The plugin source is in [`magazine-hermes/`](magazine-hermes/). Build from there:
-
-```powershell
-python scripts/build_release.py
-python scripts/verify_release.py
-```
-
-The build creates the plugin ZIP and small example ZIPs under `dist`, with
-normalized archive metadata, source hashes and SHA-256 checksums. The verification
-script checks required frontend assets, source identity and repeated-build hashes.
-Test commands and isolated-host requirements are documented in
-[INSTALL.md](magazine-hermes/docs/INSTALL.md).
-
-## License and attribution
-
-[MIT](LICENSE). Magazine reuses and adapts the independent core and interface from
+[MIT](LICENSE). Magazine adapts work from
 [Magazine for Open WebUI](https://github.com/Nundrian/Magazine) and
 [Magazine for Pi WebUI](https://github.com/Nundrian/Magazine-for-Pi-WebUI).
-Pinned references and copied-file identities are recorded in
-[REUSE.json](magazine-hermes/docs/REUSE.json).
+[Pinned references and attribution](magazine-hermes/docs/REUSE.json).

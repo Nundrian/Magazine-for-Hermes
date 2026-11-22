@@ -30,7 +30,7 @@ import protocol as proto
 import tokens
 import ui_support as ui
 
-VERSION = '0.1.0-hermes.rc2'
+VERSION = '0.1.0-hermes.rc3'
 CORE = {'ok': True}
 for key, module in {'ar':'async_runner','state':'state','ss':'state_store',
     'doc':'document','rp':'run_preparation','ra':'run_action','rl':'run_lock',

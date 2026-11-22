@@ -1,4 +1,4 @@
-# Magazine for Hermes 0.1.0-hermes.rc2
+# Magazine for Hermes 0.1.0-hermes.rc3
 
 Load a workflow ZIP, review the cartridge prompts, assign exact models and Hermes
 toolsets, then **Prepare workflow**. Preparation saves a READY snapshot. Choose
@@ -9,6 +9,12 @@ Magazine follows the current Hermes theme by default, including panel, field,
 border, tab, button and text colours. Changes in Hermes apply immediately. The
 Appearance menu retains optional Magazine dark/light palettes and remembers an
 explicit choice per browser.
+
+The bottom-right strip shows live CPU/RAM readings from Hermes System and a
+Workspace shortcut. Workspace offers the existing container/run paths, copying,
+verified results and native Hermes Files. Existing file-browser policy remains
+in force. Docker readings describe the Linux environment rather than Windows or
+GPU/VRAM usage. Missing readings display an em dash.
 
 Overview, Workflows, Set up, Ledger, Chats, Results and Manage preserve the Magazine
 application inside Hermes. The detailed ledger shows one cartridge and every

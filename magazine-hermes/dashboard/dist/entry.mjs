@@ -28,6 +28,7 @@ export function tokenLine(t) {
 }
 
 export const shortModel=value=>String(value||'unavailable').split('/').pop();
+export function resourcePercent(value){return typeof value==='number'&&Number.isFinite(value)&&value>=0&&value<=100?`${Number(value.toFixed(1))}%`:'—';}
 export function tokenCell(t) {
   if(!t||!t.attempts) return ['—', ''];
   if(!t||!t.available) return ['unavailable', t&&t.attempts?'not reported':''];
@@ -161,7 +162,10 @@ const STYLE=`
 `;
 
 
-const HTML=`<style>${STYLE}</style><main class="mag">
+const RESOURCE_STYLE=`
+.mag{padding-bottom:64px}.mag .resource-strip{position:fixed;right:10px;bottom:6px;z-index:10;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 20px);box-sizing:border-box;padding:5px 10px;border:1px solid var(--border-soft);border-radius:7px 7px 0 0;background:var(--bg-elev);color:var(--text-dim);font:11px/1.3 var(--theme-font-sans,Arial,sans-serif);box-shadow:0 -2px 12px #0002}.mag .resource-strip svg{width:14px;height:14px;flex-shrink:0;color:var(--accent)}.mag .resource-part{display:inline-flex;align-items:center;gap:5px;font-variant-numeric:tabular-nums;white-space:nowrap}.mag .resource-strip button{display:inline-flex;gap:5px;min-height:22px;margin:0;padding:1px 4px;border:0;background:transparent;color:var(--text);font:inherit}.mag .resource-strip button:hover{background:var(--accent-soft)}.mag .resource-strip button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.mag .workspace-dialog{width:min(520px,calc(100vw - 32px));max-height:85vh;overflow:auto;box-sizing:border-box;border:1px solid var(--border);border-radius:12px;padding:20px;background:var(--bg-elev);color:var(--text);font:14px/1.55 var(--theme-font-sans,Arial,sans-serif)}.mag .workspace-dialog::backdrop{background:#0008}.mag .workspace-dialog input{width:100%;font-family:var(--theme-font-mono,monospace)}.mag .workspace-dialog .workspace-actions{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.mag .workspace-dialog .workspace-actions button{margin:0}.mag .workspace-dialog a{color:var(--accent)}
+`;
+const HTML=`<style>${STYLE}${RESOURCE_STYLE}</style><main class="mag">
 <h1>Magazine</h1><p class="intro">Load your workflow, review its models and tools, then prepare and start explicitly.</p>
 <div class="status" role="status" aria-live="polite" data-id="message">Reconnecting to saved projects…</div>
 <section aria-labelledby="mag-dash"><h2 id="mag-dash">Magazine dashboard</h2>
@@ -209,6 +213,7 @@ export default {
     let chats=[],chatId=store.get('magazine-hermes-chat'),chatOffset=0,chatGeneration=null,chatRequest=0,chatBusy=false,chatListBusy=false,chatMore=false;
     let deleteTarget=null;
     let headerObserver=null;
+    let resourceBusy=false,resourceAbort=null;
     const chatListWaiters=[];
     const open=new Set(JSON.parse(store.get('magazine-hermes-expanded')||'[]')); 
     const message=(text,error=false)=>{if(closed)return;q('message').textContent=text;q('message').classList.toggle('error',error);};
@@ -231,6 +236,7 @@ export default {
     const make=(tag,props={},...kids)=>{const n=document.createElement(tag);for(const [k,v] of Object.entries(props)){if(k==='text')n.textContent=v;else if(k==='cls')n.className=v;else if(k.startsWith('aria-')||k.startsWith('data-'))n.setAttribute(k,v);else n[k]=v;}n.append(...kids);return n;};
     const option=(value,label)=>make('option',{value,text:label});
     const fillModels=(select,first='Choose a model')=>{const keep=select.value;select.replaceChildren(option('',first));for(const m of cat.models)select.append(option(m.id,m.name+' — '+m.provider));select.value=keep;};
+    const nativeRead=async(path,signal)=>{const response=await fetch(BASE+path,{credentials:'same-origin',headers:authHeaders(),signal});if(!response.ok)throw new Error(`Hermes returned HTTP ${response.status}`);return response.json();};
     const remember=async(update)=>{if(update.run_id!==undefined)store.set(LAST_RUN,update.run_id);if(update.project_id!==undefined)store.set(LAST_PROJECT,update.project_id);try{await call('view_state',{set:update});}catch{}};
     const two=(a,b)=>make('td',{},document.createTextNode(a),...(b?[make('span',{cls:'sub',text:b})]:[]));
 
@@ -299,8 +305,34 @@ export default {
       const manage=panels.manage;manage.innerHTML=`<h2>Manage workflows and saved work</h2><p>Template deletion and saved-run deletion are separate. Deleted Magazine records are recoverable from the trash below. Actual Windows/project files are kept.</p>
         <div class="confirm" data-id="delete-dialog" role="alertdialog" aria-label="Confirm Magazine deletion" hidden><p data-id="delete-summary"></p><button data-id="delete-confirm">Confirm deletion</button><button data-id="delete-cancel">Cancel</button></div>
         <h3>Workflow templates</h3><div data-id="manage-templates"></div><h3>Saved work / runs</h3><div data-id="manage-runs"></div><h3>Recoverable Magazine trash</h3><div data-id="manage-trash"></div>`;
-      selected.remove();main.append(header,nav,...Object.values(panels));
+      selected.remove();main.append(header,nav,...Object.values(panels));resourceUI(main);
       if(typeof ResizeObserver!=='undefined'){headerObserver=new ResizeObserver(()=>main.style.setProperty('--mag-header-height',`${header.hidden?0:header.offsetHeight}px`));headerObserver.observe(header);}
+    }
+    function resourceUI(main){
+      const icon=kind=>{const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');for(const [k,v] of Object.entries({viewBox:'0 0 24 24',fill:'none',stroke:'currentColor','stroke-width':'1.5','aria-hidden':'true'}))svg.setAttribute(k,v);const path=document.createElementNS(ns,'path');path.setAttribute('d',kind==='cpu'?'M8 3v3m4-3v3m4-3v3M8 18v3m4-3v3m4-3v3M3 8h3m-3 4h3m-3 4h3m12-8h3m-3 4h3m-3 4h3M7 6h10l1 1v10l-1 1H7l-1-1V7zM9 9h6v6H9z':kind==='ram'?'M3 7h18v10H3zM7 7V4m5 3V4m5 3V4M7 17v3m5-3v3m5-3v3M7 11v2m5-2v2m5-2v2':'M3 7V5h7l2 2h9v12H3z');svg.append(path);return svg;};
+      const scope='Hermes system readings. In Docker these describe its Linux environment, not Windows Task Manager or GPU/VRAM usage.';
+      const cpu=make('span',{cls:'resource-part',title:scope},icon('cpu'),make('span',{'data-id':'resource-cpu',text:'CPU —'}));
+      const ram=make('span',{cls:'resource-part',title:scope},icon('ram'),make('span',{'data-id':'resource-ram',text:'RAM —'}));
+      const workspace=make('button',{'data-id':'workspace','aria-haspopup':'dialog',title:'Workspace paths and saved results'},icon('folder'),document.createTextNode('Workspace'));
+      const strip=make('footer',{cls:'resource-strip',role:'group','aria-label':'System resources and workspace'},cpu,ram,workspace);
+      const root=make('input',{'data-id':'workspace-root',readOnly:true,value:'/workspace','aria-label':'Container workspace path'});
+      const run=make('input',{'data-id':'workspace-run',readOnly:true,'aria-label':'Selected run workspace path'});
+      const results=make('button',{'data-id':'workspace-results',text:'Open verified results'});
+      const close=make('button',{'data-id':'workspace-close',text:'Close',autofocus:true});
+      const dialog=make('dialog',{cls:'workspace-dialog','data-id':'workspace-dialog','aria-labelledby':'mag-workspace-title'},make('h2',{id:'mag-workspace-title',text:'Workspace'}),make('p',{text:'Magazine writes each run into its own folder in the existing container workspace.'}),make('label',{},document.createTextNode('Container workspace'),root),make('label',{},document.createTextNode('Selected run'),run),make('div',{cls:'workspace-actions'},make('button',{'data-id':'workspace-copy',text:'Copy path'}),results,close),make('p',{},make('a',{href:BASE+'/files',target:'_blank',rel:'noopener',text:'Open Hermes Files'})),make('p',{'data-id':'workspace-policy',cls:'dim'}),make('p',{'data-id':'workspace-status',role:'status'}));
+      main.append(strip,dialog);
+      workspace.addEventListener('click',()=>{run.value=runId?'/workspace/magazine-runs/'+runId:'No run selected';results.disabled=!runId;q('workspace-status').textContent='';q('workspace-policy').textContent='Reading Hermes file-browser access…';if(!dialog.open)dialog.showModal();void nativeRead('/api/files').then(value=>{if(!closed)q('workspace-policy').textContent=value.locked_root?`Hermes Files is limited to ${value.locked_root}. Workspace mounts can be outside that browser; use the copied path or verified Results.`:'Hermes Files uses its normal file-access policy. Results exports the verified committed files.';}).catch(()=>{if(!closed)q('workspace-policy').textContent='Hermes Files uses its existing file-access policy. Results provides verified Magazine outputs.';});});
+      close.addEventListener('click',()=>dialog.close());
+      dialog.addEventListener('close',()=>{if(!closed)workspace.focus();});
+      q('workspace-copy').addEventListener('click',async()=>{const input=runId?run:root;try{await navigator.clipboard.writeText(input.value);if(!closed)q('workspace-status').textContent='Workspace path copied.';}catch{input.focus();input.select();q('workspace-status').textContent='Path selected. Press Ctrl+C to copy.';}});
+      results.addEventListener('click',attempt(async()=>{dialog.close();await showPanel('results');}));
+    }
+    async function refreshResources(){
+      if(closed||document.hidden||resourceBusy)return;
+      resourceBusy=true;resourceAbort=new AbortController();const timeout=setTimeout(()=>resourceAbort?.abort(),8000);
+      try{const value=await nativeRead('/api/system/stats',resourceAbort.signal);if(closed)return;q('resource-cpu').textContent='CPU '+resourcePercent(value.cpu_percent);q('resource-cpu').parentElement.title='CPU usage reported by Hermes System. Docker readings describe the Linux environment, not Windows Task Manager or GPU usage.';q('resource-ram').textContent='RAM '+resourcePercent(value.memory?.percent);q('resource-ram').parentElement.title=`Hermes system RAM: ${typeof value.memory?.used==='number'?(value.memory.used/1024**3).toFixed(1):'—'} / ${typeof value.memory?.total==='number'?(value.memory.total/1024**3).toFixed(1):'—'} GiB. Docker readings describe the Linux environment.`;}
+      catch{if(!closed){q('resource-cpu').textContent='CPU —';q('resource-ram').textContent='RAM —';q('resource-cpu').parentElement.title=q('resource-ram').parentElement.title='Hermes resource readings are unavailable; no usage value is assumed.';}}
+      finally{clearTimeout(timeout);resourceBusy=false;resourceAbort=null;}
     }
     async function showPanel(name){
       if(closed)return;
@@ -688,6 +720,7 @@ export default {
     button('download-history',()=>download('download_history','application/x-ndjson','Execution history downloaded.'));
     button('download-jsonl',()=>download('download_jsonl','application/x-ndjson;charset=utf-8','Run JSONL downloaded. Retained records only; unrecorded history is not reconstructed.'));
     // GETs only while open: polling never starts, stops or reorders work.
+    const resourceTimer=setInterval(refreshResources,5000);void refreshResources();
     const timer=setInterval(()=>{tick++;if(closed||document.hidden)return;
       if(tick%2===0)void loadRuns().catch(e=>{q('dashboard-state').textContent='Reconnection failed: '+e.message+' · retrying';});
       if(panel==='chats'){if(tick%3===0)void loadChats(false).catch(e=>{q('chat-state').textContent=e.message;});void readChat();}
@@ -704,6 +737,6 @@ export default {
       if(chosen)message('Restored '+(runs.find(r=>r.run_id===chosen)?.name||'run')+'. Nothing was started.');
       else message(runs.length?'Select a Magazine in the dashboard to view its saved progress.':'Magazine ready.');
     })();
-    return ()=>{closed=true;clearInterval(timer);headerObserver?.disconnect();el.replaceChildren();};
+    return ()=>{closed=true;clearInterval(timer);clearInterval(resourceTimer);resourceAbort?.abort();q('workspace-dialog')?.close();headerObserver?.disconnect();el.replaceChildren();};
   }
 };

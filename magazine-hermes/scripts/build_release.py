@@ -5,7 +5,7 @@ from pathlib import Path
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-VERSION='0.1.0-hermes.rc2'
+VERSION='0.1.0-hermes.rc3'
 OUT=ROOT.parent/'dist'
 OUT.mkdir(exist_ok=True)
 excluded={'__pycache__','.git','node_modules','.venv','evidence','runtime','private'}
